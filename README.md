@@ -1,6 +1,7 @@
 # AI Interview Bot Powered by Cerebras Inference (Llama 70B)
 
-Go to 
+**[File with calls to Cerebras Inference](https://github.com/yanovsk/ai_interviewer_dashboard_cerebras/blob/main/backend/cerebrasService.js)**
+
 
 ## Project Overview
 
