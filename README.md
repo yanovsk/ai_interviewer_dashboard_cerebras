@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# AI Interview Bot Powered by Cerebras Inference (Llama 70B)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Go to 
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+This project is an application for the Cerebras fellowship by Dima Yanovsky (yanovsky@mit.edu) and Andrii Zahorodnii (zaho@mit.edu).
 
-### `npm start`
+**[Link to Loom video demonstration](https://www.loom.com/share/a89d23caffd1427c8005b00890c6db59?sid=f0be9ec1-6b7e-45a7-8f0b-4775748f614b)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**[Backup Google Drive link to the same video](https://drive.google.com/file/d/1UXm_y8S3-Q02km-F3RcTabgkeTYDF4K8/view?usp=sharing)**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Summary
 
-### `npm test`
+We've developed an AI-powered interview bot that conducts personalized audio interviews, transcribes them, and generates tailored reports for both HR and candidates. The system leverages large language models (LLMs) to create custom application forms, generate interview questions, and produce comprehensive post-interview reports.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How We Built It
 
-### `npm run build`
+Our system comprises several key components:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. HR Dashboard: For inputting job requirements and interview criteria
+2. LLM-powered Form Generator: Creates tailored Google Forms
+3. Application Processing Backend: Processes submitted applications and generates personalized interview questions
+4. Audio-based AI Interviewer: Conducts the actual interview
+5. Report Generator: Analyzes the interview and produces insights
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+We utilized Llama-70B, running on Cerebras Inference, for various natural language processing tasks throughout the pipeline.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Leveraging Cerebras' Fast Inference
 
-### `npm run eject`
+Our project heavily relies on Cerebras' fast inference capabilities for real-time processing and generation tasks:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Instant generation of custom Google Forms based on job requirements
+2. Creation of tailored interview questions for each candidate in seconds
+3. Near real-time processing of candidate responses during the interview
+4. Rapid generation of post-interview reports
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The speed and efficiency of Cerebras' inference enable us to provide a seamless, interactive experience for both HR professionals and job candidates.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Future Roadmap
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+We plan to enhance the AI Interview Bot in several ways:
 
-## Learn More
+1. Implement more sophisticated agents to adjust the interview based on the candidate's responses, allowing for dynamic interview paths.
+2. Expand the system's capability to handle multi-round interviews and follow-up questions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+By continuing to leverage Cerebras' powerful inference capabilities, we aim to create an even more intelligent and efficient interviewing tool. We believe that fine-tuning Llama 405B will allow for incredible further development of this project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Dima Yanovsky (yanovsky@mit.edu)
+- Andrii Zahorodnii (zaho@mit.edu)
