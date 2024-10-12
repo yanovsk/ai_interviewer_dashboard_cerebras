@@ -21,7 +21,7 @@ const {
   generateGoogleFormJSON,
   generateInterviewQuestionsJSON,
   generateReportTemplate,
-} = require("./openaiService"); // Import the functions from openaiService.js
+} = require("./cerebrasService");
 
 const app = express();
 const port = 3001;
@@ -60,6 +60,8 @@ async function connectDb() {
     db = client.db(DB_NAME);
     bucket = new GridFSBucket(db, { bucketName: "files" });
     applicationFormsCollection = db.collection("applicationForms");
+
+    console.log(applicationFormsCollection);
     console.log("Connected to MongoDB and collections initialized!");
   } catch (e) {
     console.error("MongoDB Connection failed:", e);
@@ -298,7 +300,7 @@ async function checkForNewResponses() {
 }
 
 // Start the periodic check
-setInterval(checkForNewResponses, 30000);
+setInterval(checkForNewResponses, 1000);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

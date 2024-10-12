@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@carbon/react": "^1.63.2",
+    "@cerebras/cerebras_cloud_sdk": "^1.6.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@fontsource/roboto": "^5.0.14",
