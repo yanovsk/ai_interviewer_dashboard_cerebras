@@ -46,9 +46,6 @@ We plan to enhance the AI Interview Bot in several ways:
 
 By continuing to leverage Cerebras' powerful inference capabilities, we aim to create an even more intelligent and efficient interviewing tool. We believe that fine-tuning Llama 405B will allow for incredible further development of this project.
 
-## Getting Started
-
-(Add instructions for setting up and running the project here)
 
 ## Contributors
 
