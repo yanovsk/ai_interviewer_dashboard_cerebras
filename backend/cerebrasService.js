@@ -1,10 +1,9 @@
-const {Cerebras} = require('@cerebras/cerebras_cloud_sdk');
+const { Cerebras } = require("@cerebras/cerebras_cloud_sdk");
 const { ContactlessOutlined } = require("@mui/icons-material");
 require("dotenv").config();
 
-
 const cerebrasClient = new Cerebras({
-  apiKey: process.env.CEREBRAS_API_KEY, 
+  apiKey: process.env.CEREBRAS_API_KEY,
 });
 
 function parseStringToJson(inputString) {
@@ -21,12 +20,12 @@ function parseStringToJson(inputString) {
 }
 
 async function generateGoogleFormJSON(userPrompt) {
-  const completionCreateResponse = await cerebrasClient.chat.completions.create({
-    messages: [
-      {
-        role: "system",
-        content:
-        `
+  const completionCreateResponse = await cerebrasClient.chat.completions.create(
+    {
+      messages: [
+        {
+          role: "system",
+          content: `
         You are smart JSON job application form generation agent. ONLY RESPOND WITH JSON AND NOTHING ELSE.
             User will provide you job description and you must generate the JSON file corresponding to questions fitting to that job description.
 
@@ -48,31 +47,32 @@ async function generateGoogleFormJSON(userPrompt) {
                 },
               ]
             }
-        `
-      },
-      {
-        role: "user",
-        content: `${userPrompt}. Do not ask for email in the application form. ONLY RESPOND WITH JSON AND NOTHING ELSE`,
-      },
-    ],
-    model: 'llama3.1-70b',
-  });
+        `,
+        },
+        {
+          role: "user",
+          content: `${userPrompt}. Do not ask for email in the application form. ONLY RESPOND WITH JSON AND NOTHING ELSE`,
+        },
+      ],
+      model: "llama3.1-70b",
+    }
+  );
 
-  const jsonResponse = parseStringToJson( (await completionCreateResponse).choices[0].message.content);
-  console.log("JSON", jsonResponse)
+  const jsonResponse = parseStringToJson(
+    (await completionCreateResponse).choices[0].message.content
+  );
+  console.log("JSON", jsonResponse);
   return convertToGoogleFormsAPIFormat(jsonResponse);
-
 }
 
 async function generateInterviewQuestionsJSON(userPrompt) {
-  try{
-
-    const completionCreateResponse = await cerebrasClient.chat.completions.create({
-      messages: [
-        {
-          role: "system",
-          content:
-          `
+  try {
+    const completionCreateResponse =
+      await cerebrasClient.chat.completions.create({
+        messages: [
+          {
+            role: "system",
+            content: `
           ### instructions
           You are a smart interviewer bot which was created to choose the best people to match specific qualifications. 
           Generate an array of interview questions based on the provided  information. 
@@ -91,38 +91,37 @@ async function generateInterviewQuestionsJSON(userPrompt) {
                 },
               ]
             }
-          `
+          `,
           },
           {
             role: "user",
             content: `ONLY RESPOND WITH JSON AND NOTHING ELSE. ${userPrompt}.`,
           },
-         ],
-            model: 'llama3.1-70b',
-          });
-          const response = (await completionCreateResponse).choices[0].message.content;
-          const jsonResponse = parseStringToJson(response);
-          console.log("in question generation", jsonResponse)
-          return jsonResponse.questions;
-        } catch (error) {
-          console.error("Error creating interview questions:", error);
-          throw error;
-      }
-    }
+        ],
+        model: "llama3.1-70b",
+      });
+    const response = (await completionCreateResponse).choices[0].message
+      .content;
+    const jsonResponse = parseStringToJson(response);
+    console.log("in question generation", jsonResponse);
+    return jsonResponse.questions;
+  } catch (error) {
+    console.error("Error creating interview questions:", error);
+    throw error;
+  }
+}
 
-
-    async function generateCustomInterviewQuestionsJSON(
-      interviewReqs,
-      filledApplicationForm
-      ) {
-
-        try {
-        const completionCreateResponse = await cerebrasClient.chat.completions.create({
-          messages: [
-            {
-              role: "system",
-              content:
-              `
+async function generateCustomInterviewQuestionsJSON(
+  interviewReqs,
+  filledApplicationForm
+) {
+  try {
+    const completionCreateResponse =
+      await cerebrasClient.chat.completions.create({
+        messages: [
+          {
+            role: "system",
+            content: `
             ###instructions
               you are a smart interviewer bot which was created to choose the best people to match specific qualifications. 
               Generate an array of interview questions based on the provided information. 
@@ -144,37 +143,35 @@ async function generateInterviewQuestionsJSON(userPrompt) {
                   },
                 ]
               }
-              `
-              },
-              {
-                role: "user",
-                content: `### Interview requirements ${interviewReqs}\n ### Applicant filled out application form ${filledApplicationForm}`,
-              },
-             ],
-                model: 'llama3.1-70b',
-              });
+              `,
+          },
+          {
+            role: "user",
+            content: `### Interview requirements ${interviewReqs}\n ### Applicant filled out application form ${filledApplicationForm}`,
+          },
+        ],
+        model: "llama3.1-70b",
+      });
 
-              const response = (await completionCreateResponse).choices[0].message.content;
-              const jsonResponse = parseStringToJson(response);
-              console.log("in question generation", jsonResponse)
-              return jsonResponse.questions;
+    const response = (await completionCreateResponse).choices[0].message
+      .content;
+    const jsonResponse = parseStringToJson(response);
+    console.log("in question generation", jsonResponse);
+    return jsonResponse.questions;
+  } catch (error) {
+    console.error("Error creating interview questions:", error);
+    throw error;
+  }
+}
 
-
-            } catch (error) {
-              console.error("Error creating interview questions:", error);
-              throw error;
-          }
-        }
-
-        
 async function generateReportTemplate(userPrompt) {
-  try{
-    const completionCreateResponse = await cerebrasClient.chat.completions.create({
-      messages: [
-        {
-          role: "system",
-          content:
-          `
+  try {
+    const completionCreateResponse =
+      await cerebrasClient.chat.completions.create({
+        messages: [
+          {
+            role: "system",
+            content: `
           ### instructions
             You are an assistant that generates a report template for evaluating job candidates. 
             YOU MUST ALWAYS RESPOND IN JSON FORMAT BELOW AND NOTHING ELSE.
@@ -193,22 +190,23 @@ async function generateReportTemplate(userPrompt) {
                 },
               ]
             }         
-          `
+          `,
           },
           {
             role: "user",
             content: `ONLY RESPOND WITH JSON AND NOTHING ELSE. ${userPrompt}.`,
           },
-         ],
-            model: 'llama3.1-70b',
-          });
-          const response = (await completionCreateResponse).choices[0].message.content;
-          return parseStringToJson(response);
-        } catch (error) {
-          console.error("Error creating interview questions:", error);
-          throw error;
-      }
+        ],
+        model: "llama3.1-70b",
+      });
+    const response = (await completionCreateResponse).choices[0].message
+      .content;
+    return parseStringToJson(response);
+  } catch (error) {
+    console.error("Error creating interview questions:", error);
+    throw error;
   }
+}
 
 function convertToGoogleFormsAPIFormat(json) {
   const emailQuestion = {
