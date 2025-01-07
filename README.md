@@ -2,7 +2,6 @@
 
 **[File with calls to Cerebras Inference](https://github.com/yanovsk/ai_interviewer_dashboard_cerebras/blob/main/backend/cerebrasService.js)**
 
-
 ## Project Overview
 
 This project is an application for the Cerebras fellowship by Dima Yanovsky (yanovsky@mit.edu) and Andrii Zahorodnii (zaho@mit.edu).
@@ -47,8 +46,18 @@ We plan to enhance the AI Interview Bot in several ways:
 
 By continuing to leverage Cerebras' powerful inference capabilities, we aim to create an even more intelligent and efficient interviewing tool. We believe that fine-tuning Llama 405B will allow for incredible further development of this project.
 
-
 ## Contributors
 
-- Dima Yanovsky (yanovsky@mit.edu)
-- Andrii Zahorodnii (zaho@mit.edu)
+<img src="public/ulta-RGB.webp" alt="Alt text" width="180" >
+
+Made by [ULTA](https://ultacademy.org) students:
+
+- Yaryna Holos
+- Yarema Kertytsky
+- Sviatoslav Matviiuk
+- Dariia Zubova
+
+With support from ULTA mentors:
+
+- Dima Yanovsky ([yanovsky@mit.edu](mailto:yanovsky@mit.edu))
+- Andrii Zahorodnii ([zaho@mit.edu](mailto:zaho@mit.edu))
