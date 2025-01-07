@@ -52,10 +52,10 @@ By continuing to leverage Cerebras' powerful inference capabilities, we aim to c
 
 Made by [ULTA](https://ultacademy.org) students:
 
-- Yaryna Holos
-- Yarema Kertytsky
-- Sviatoslav Matviiuk
-- Dariia Zubova
+- [Yaryna Holoshchuk](https://www.linkedin.com/in/yaryna-holoshchuk-a47560271/)
+- [Yarema Kertytsky](https://www.linkedin.com/in/yarema-kertytsky/)
+- [Sviatoslav Matviiuk](https://www.linkedin.com/in/sviatoslav-matviiuk/)
+- [Dariia Zubova](https://www.linkedin.com/in/dariia-zubova-91a983331/)
 
 With support from ULTA mentors:
 
