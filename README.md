@@ -1,14 +1,7 @@
-# AI Interview Bot Powered by Cerebras Inference (Llama 70B)
+# AIBI
 
 **[File with calls to Cerebras Inference](https://github.com/yanovsk/ai_interviewer_dashboard_cerebras/blob/main/backend/cerebrasService.js)**
 
-## Project Overview
-
-This project is an application for the Cerebras fellowship by Dima Yanovsky (yanovsky@mit.edu) and Andrii Zahorodnii (zaho@mit.edu).
-
-**[Link to Loom video demonstration](https://www.loom.com/share/a89d23caffd1427c8005b00890c6db59?sid=f0be9ec1-6b7e-45a7-8f0b-4775748f614b)**
-
-**[Backup Google Drive link to the same video](https://drive.google.com/file/d/1UXm_y8S3-Q02km-F3RcTabgkeTYDF4K8/view?usp=sharing)**
 
 ## Summary
 
@@ -26,7 +19,7 @@ Our system comprises several key components:
 
 We utilized Llama-70B, running on Cerebras Inference, for various natural language processing tasks throughout the pipeline.
 
-## Leveraging Cerebras' Fast Inference
+## Leveraging Fast Inference
 
 Our project heavily relies on Cerebras' fast inference capabilities for real-time processing and generation tasks:
 
@@ -43,8 +36,6 @@ We plan to enhance the AI Interview Bot in several ways:
 
 1. Implement more sophisticated agents to adjust the interview based on the candidate's responses, allowing for dynamic interview paths.
 2. Expand the system's capability to handle multi-round interviews and follow-up questions.
-
-By continuing to leverage Cerebras' powerful inference capabilities, we aim to create an even more intelligent and efficient interviewing tool. We believe that fine-tuning Llama 405B will allow for incredible further development of this project.
 
 ## Contributors
 
